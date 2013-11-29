@@ -39,15 +39,34 @@
 			<Add directory="../../Clarus/Sources" />
 		</Compiler>
 		<Linker>
+			<Add option="-lclarus" />
 			<Add option="-lboost_system" />
 			<Add option="-lboost_filesystem" />
 			<Add option="-lopencv_core" />
 			<Add option="-lopencv_highgui" />
 			<Add option="-lopencv_imgproc" />
 			<Add option="-lopencv_video" />
-			<Add option="-lclarus" />
 		</Linker>
-		<Unit filename="main.cpp" />
+		<Unit filename="assembler.cpp" />
+		<Unit filename="assembler.hpp" />
+		<Unit filename="assembler_top10.cpp" />
+		<Unit filename="assembler_top10.hpp" />
+		<Unit filename="cases.cpp" />
+		<Unit filename="cases.hpp" />
+		<Unit filename="channels.cpp" />
+		<Unit filename="channels.hpp" />
+		<Unit filename="domain.hpp" />
+		<Unit filename="extractor.cpp" />
+		<Unit filename="extractor.hpp" />
+		<Unit filename="neurons.hpp" />
+		<Unit filename="output.cpp" />
+		<Unit filename="output.hpp" />
+		<Unit filename="parameters.cpp" />
+		<Unit filename="parameters.hpp" />
+		<Unit filename="sampler.hpp" />
+		<Unit filename="sampler_bayer.hpp" />
+		<Unit filename="sampler_dither.hpp" />
+		<Unit filename="zeta.cpp" />
 		<Unit filename="zeta.hpp" />
 		<Extensions>
 			<envvars />

@@ -10,7 +10,7 @@ namespace zeta {
 
     typedef cv::Mat Y;
 
-    typedef uchar F;
+    typedef List<cv::Mat> F;
 
     typedef float G;
 

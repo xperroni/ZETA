@@ -5,7 +5,9 @@ zeta::Assembler::Assembler(const Parameters &_p):
 {
     for (int z = 0, n = p.n_N; z < n; z++) {
         depths.push_back(cv::Mat::zeros(p.m_H, p.n_H, CV_32F));
-        errors.push_back(cv::Mat::zeros(p.m_H, p.n_H, CV_32S));
+
+        cv::Mat e(p.m_H, p.n_H, CV_32S, cv::Scalar(std::numeric_limits<int>::max()));
+        errors.push_back(e);
     }
 }
 

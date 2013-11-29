@@ -10,6 +10,8 @@ namespace zeta {
 }
 
 struct zeta::Parameters {
+    const size_t r;
+
     const int m_N;
 
     const int n_N;
@@ -22,9 +24,9 @@ struct zeta::Parameters {
 
     const int n_P;
 
-    std::map<S, gaussian::sampler> synapses;
+    std::map<S, clarus::sampler> synapses;
 
-    Parameters(int length, int samples, double sigma, const cv::Size &images, const cv::Size &depths);
+    Parameters(size_t length, int samples, double sigma, const cv::Size &images, const cv::Size &depths);
 };
 
 #endif

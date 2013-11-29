@@ -3,12 +3,13 @@
 #define CHANNELS 4
 
 zeta::Parameters::Parameters(
-    int length,
+    size_t length,
     int samples,
     double sigma,
     const cv::Size &images,
     const cv::Size &depths
 ):
+    r(length),
     m_N(depths.height),
     n_N(samples),
     m_H(depths.height),
@@ -20,7 +21,10 @@ zeta::Parameters::Parameters(
     for (int i = 0; i < m_N; i++) {
         for (int j = 0; j < n_N; j++) {
             for (int k = 0; k < CHANNELS; k++) {
-                synapses[S(i, j, k)] = gaussian::sampler(length / CHANNELS, sigma, field);
+                synapses[S(i, j, k)] = clarus::sampler(
+                    length / CHANNELS,
+                    clarus::sampler::gaussian(sigma, field)
+                );
             }
         }
     }

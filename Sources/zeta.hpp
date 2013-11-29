@@ -5,11 +5,11 @@
 #include "parameters.hpp"
 #include "output.hpp"
 
-#include "assembler.hpp"
+#include "assembler_top10.hpp"
 #include "extractor.hpp"
 #include "indices.hpp"
 #include "neurons.hpp"
-#include "sampler.hpp"
+#include "sampler_dither.hpp"
 
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
@@ -30,6 +30,8 @@ template<size_t r> class zeta::ZETA {
 
         typedef vgram::bitstring<r> B;
 
+        typedef zeta::F F;
+
         typedef zeta::G G;
 
         typedef zeta::J J;
@@ -42,15 +44,13 @@ template<size_t r> class zeta::ZETA {
 
         typedef zeta::Parameters P;
 
-        typedef zeta::Sampler<B> alpha;
+        typedef zeta::DitherSampler<B> alpha;
 
         typedef zeta::Extractor beta;
 
-        typedef zeta::Indices gamma;
+        typedef zeta::Neurons<B> gamma;
 
-        typedef zeta::Neurons<B> delta;
-
-        typedef zeta::Assembler omega;
+        typedef zeta::AssemblerTop10 omega;
     };
 
     vgram::network<Z> w;
