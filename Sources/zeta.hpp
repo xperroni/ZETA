@@ -24,7 +24,6 @@ along with ZETA.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "assembler_top10.hpp"
 #include "extractor.hpp"
-#include "indices.hpp"
 #include "neurons.hpp"
 #include "sampler_dither.hpp"
 
